@@ -9,7 +9,8 @@ class accueil extends StatefulWidget {
 }
 
 class _accueilState extends State<accueil> {
-  Color _color = Colors.white; //je definie la couleur de fond afin ensuite de la mettre transparente
+  Color _color = Colors
+      .white; //je definie la couleur de fond afin ensuite de la mettre transparente
   Icon _loupe = Icon(Icons.search, color: Colors.black);
   Icon _map = Icon(Icons.map, color: Colors.white);
 
@@ -17,21 +18,18 @@ class _accueilState extends State<accueil> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: _color,
-
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        actions: <Widget> [
+        actions: <Widget>[
           IconButton(
             icon: _loupe,
-            onPressed: () {Navigator.pushNamed(context, '/route6');
-              },
+            onPressed: () {
+              Navigator.pushNamed(context, '/route6');
+            },
           )
         ],
       ),
-
-
-
       body: Container(
         //Image en Background
         width: double.infinity,
@@ -56,17 +54,17 @@ class _accueilState extends State<accueil> {
                 onPressed: () {
                   Navigator.popAndPushNamed(context, '/route5');
                 }),
+            SizedBox(
+              height: 15,
+            ),
             FloatingActionButton(
                 child: _map,
-
                 onPressed: () {
                   Navigator.pushNamed(context, '/route8');
                 }),
           ],
         ),
-
       ),
-
     );
   }
 }

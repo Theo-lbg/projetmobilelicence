@@ -9,8 +9,8 @@ class Cinema extends StatefulWidget {
 }
 
 class _CinemaState extends State<Cinema> {
-  static const _positioncamera = CameraPosition(
-      target: LatLng(50.62998647192007, 3.056167049079924), zoom: 11.5);
+  static const _positioncamera =
+      CameraPosition(target: LatLng(50.326361, 3.517028), zoom: 11.5);
 
   late GoogleMapController _googleMapController;
   late MapType _currentMapType = MapType.normal;
@@ -19,55 +19,21 @@ class _CinemaState extends State<Cinema> {
     markerId: const MarkerId('_yourposition'),
     infoWindow: const InfoWindow(title: 'Votre position !'),
     icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
-    position: const LatLng(50.62998647192007, 3.056167049079924),
+    position: const LatLng(50.326361, 3.517028),
   );
 
   static final Marker _marker1 = Marker(
     markerId: const MarkerId('_marker1'),
-    infoWindow: const InfoWindow(title: "Musée d'histoire naturellle."),
+    infoWindow: const InfoWindow(title: "Gaumont Valenciennes"),
     icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
-    position: const LatLng(50.62720474785038, 3.066846455407347),
+    position: const LatLng(50.34165484884704, 3.5148767086287283),
   );
 
   static final Marker _marker2 = Marker(
     markerId: const MarkerId('_marker2'),
-    infoWindow: const InfoWindow(title: "porte de Paris."),
+    infoWindow: const InfoWindow(title: "Ociné Maubeuge"),
     icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
-    position: const LatLng(50.63001587378566, 3.0686931159585202),
-  );
-
-  static final Marker _marker3 = Marker(
-    markerId: const MarkerId('_marker3'),
-    infoWindow: const InfoWindow(title: "La Citadelle de Lille."),
-    icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
-    position: const LatLng(50.64001630121305, 3.0465195291198137),
-  );
-
-  static final Marker _marker4 = Marker(
-    markerId: const MarkerId('_marker4'),
-    infoWindow: const InfoWindow(title: "CHU de Lille."),
-    icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
-    position: const LatLng(50.611855201896866, 3.0347930194849773),
-  );
-  static final Marker _marker5 = Marker(
-    markerId: const MarkerId('_marker5'),
-    infoWindow: const InfoWindow(title: "Cathédrale Notre Dame."),
-    icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
-    position: const LatLng(50.64039943114424, 3.0623367550341154),
-  );
-
-  static final Marker _marker6 = Marker(
-    markerId: const MarkerId('_marker6'),
-    infoWindow: const InfoWindow(title: "Marché de Wazemmes."),
-    icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
-    position: const LatLng(50.62776195446704, 3.0499177399622055),
-  );
-
-  static final Marker _marker7 = Marker(
-    markerId: const MarkerId('_marker7'),
-    infoWindow: const InfoWindow(title: "Gare d'Europe."),
-    icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
-    position: const LatLng(50.64046609354359, 3.0750415712307944),
+    position: const LatLng(50.27262882869565, 3.971136143665995),
   );
 
   @override
@@ -81,7 +47,7 @@ class _CinemaState extends State<Cinema> {
         appBar: AppBar(
           title: const Text("Votre Ville"),
           centerTitle: true,
-          backgroundColor: const Color.fromARGB(255, 4, 16, 146),
+          backgroundColor: Color.fromARGB(255, 32, 124, 244),
           actions: [
             TextButton(
               child: const Text("Hybrid"),
@@ -105,11 +71,6 @@ class _CinemaState extends State<Cinema> {
             _votreposition,
             _marker1,
             _marker2,
-            _marker3,
-            _marker4,
-            _marker5,
-            _marker6,
-            _marker7,
           },
         ),
         floatingActionButton: FloatingActionButton(
@@ -119,6 +80,6 @@ class _CinemaState extends State<Cinema> {
               .animateCamera(CameraUpdate.newCameraPosition(_positioncamera)),
           child: const Icon(Icons.center_focus_strong),
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       );
 }
