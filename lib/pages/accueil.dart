@@ -9,27 +9,29 @@ class accueil extends StatefulWidget {
 }
 
 class _accueilState extends State<accueil> {
-  Color _color = Colors
-      .black; //je definie la couleur de fond afin ensuite de la mettre transparente
-  Icon _loupe = Icon(Icons.search, color: Colors.white);
+  Color _color = Colors.white; //je definie la couleur de fond afin ensuite de la mettre transparente
+  Icon _loupe = Icon(Icons.search, color: Colors.black);
   Icon _map = Icon(Icons.map, color: Colors.white);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: _color,
+
       appBar: AppBar(
-        //title: Text(widget.title),  // a enlever par la suite
-        backgroundColor: Colors
-            .transparent, //a remettre en transparent, en bleu en attendant d'ajouter la loupe dans l'appBar
+        backgroundColor: Colors.transparent,
         elevation: 0,
+        actions: <Widget> [
+          IconButton(
+            icon: _loupe,
+            onPressed: () {Navigator.pushNamed(context, '/route6');
+              },
+          )
+        ],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
-      floatingActionButton: FloatingActionButton(
-          child: _loupe,
-          onPressed: () {
-            Navigator.pushNamed(context, '/route6');
-          }),
+
+
+
       body: Container(
         //Image en Background
         width: double.infinity,
@@ -56,12 +58,15 @@ class _accueilState extends State<accueil> {
                 }),
             FloatingActionButton(
                 child: _map,
+
                 onPressed: () {
-                  Navigator.pushNamed(context, '/route6');
+                  Navigator.pushNamed(context, '/route8');
                 }),
           ],
         ),
+
       ),
+
     );
   }
 }
