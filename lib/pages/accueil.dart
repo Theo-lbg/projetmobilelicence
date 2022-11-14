@@ -21,7 +21,7 @@ class _accueilState extends State<accueil> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              "Bonjour et Bienvenue sur notre Application de référencement de Films:",
+              "Bienvenue sur notre Application qui réfère vos films préférés !",
               style: TextStyle(color: Colors.red, wordSpacing: 12),
             ),
             ElevatedButton(
