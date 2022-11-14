@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:projetmobilelicence/myhomepage.dart';
+import 'package:projetmobilelicence/SplashScreen.dart';
+import 'package:projetmobilelicence/pages/Favoris.dart';
+import 'package:projetmobilelicence/pages/Film.dart';
+import 'package:projetmobilelicence/pages/accueil.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,14 +19,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: "Our first APP"),
+      home: const accueil(title: "Our first APP"),
       routes: <String, WidgetBuilder>{
-        '/route1': (BuildContext context) => const MyHomePage(
+        '/route1': (BuildContext context) => const accueil(
               title: 'Our first APP',
             ),
-        '/route2': (BuildContext context) => const MyHomePage(
-              title: 'Our first APP',
-            ),
+        '/route2': (BuildContext context) => const Film(),
+        '/route3': (BuildContext context) => const SplashScreen(),
+        '/route4': (BuildContext context) => const Favoris(),
+        '/route5': (BuildContext context) => const Film(),
       },
     );
   }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class accueil extends StatefulWidget {
+  const accueil({super.key, required this.title});
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<accueil> createState() => _accueilState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _accueilState extends State<accueil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,12 +21,12 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              "Bonjour et Bienvenue sur notre Application de référencement de Films et de cinémas:",
-              style: TextStyle(color: Colors.red),
+              "Bonjour et Bienvenue sur notre Application de référencement de Films:",
+              style: TextStyle(color: Colors.red, wordSpacing: 12),
             ),
             ElevatedButton(
                 onPressed: () => Navigator.of(context).pushNamedAndRemoveUntil(
-                    '/route', (Route<dynamic> route) => false),
+                    '/route2', (Route<dynamic> route) => false),
                 child: const Text("Voir la liste des films"))
           ],
         ),
