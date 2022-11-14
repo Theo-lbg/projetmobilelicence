@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:projetmobilelicence/SplashScreen.dart';
 import 'package:projetmobilelicence/pages/Favoris.dart';
 import 'package:projetmobilelicence/pages/Film.dart';
 import 'package:projetmobilelicence/pages/accueil.dart';
 import 'package:projetmobilelicence/pages/DetailFilm.dart';
 import 'package:projetmobilelicence/PagesRecherches//Rechercher.dart';
 import 'package:projetmobilelicence/PagesRecherches//ResuRechercher.dart';
-
-
-
 
 void main() {
   runApp(const MyApp());
@@ -31,12 +27,10 @@ class MyApp extends StatelessWidget {
               title: 'Our first APP',
             ),
         '/route2': (BuildContext context) => const DetailFilm(),
-        '/route3': (BuildContext context) => const SplashScreen(),
         '/route4': (BuildContext context) => const Favoris(),
         '/route5': (BuildContext context) => const Film(),
         '/route6': (BuildContext context) => const Rechercher(),
         '/route7': (BuildContext context) => const ResuRechercher(),
-
       },
     );
   }
