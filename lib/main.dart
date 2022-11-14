@@ -22,10 +22,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const accueil(title: "Our first APP"),
+      home: const accueil(title: "Notre première application"),
       routes: <String, WidgetBuilder>{
         '/route1': (BuildContext context) => const accueil(
-              title: 'Our first APP',
+              title: 'Notre première Application',
             ),
         '/route2': (BuildContext context) => const DetailFilm(),
         '/route4': (BuildContext context) => const Favoris(),
