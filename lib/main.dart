@@ -12,11 +12,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'API FILMS LEBEGUE THEO',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: "Our first APP"),
+      routes: <String, WidgetBuilder>{
+        '/route1': (BuildContext context) => const MyHomePage(
+              title: 'Our first APP',
+            ),
+        '/route2': (BuildContext context) => const MyHomePage(
+              title: 'Our first APP',
+            ),
+      },
     );
   }
 }
