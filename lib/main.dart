@@ -5,6 +5,7 @@ import 'package:projetmobilelicence/pages/accueil.dart';
 import 'package:projetmobilelicence/pages/DetailFilm.dart';
 import 'package:projetmobilelicence/PagesRecherches//Rechercher.dart';
 import 'package:projetmobilelicence/PagesRecherches//ResuRechercher.dart';
+import 'package:projetmobilelicence/pages/cinema.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         '/route5': (BuildContext context) => const Film(),
         '/route6': (BuildContext context) => const Rechercher(),
         '/route7': (BuildContext context) => const ResuRechercher(),
+        '/route8': (BuildContext context) => const Cinema(),
       },
     );
   }
