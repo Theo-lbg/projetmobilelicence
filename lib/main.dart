@@ -33,7 +33,6 @@ class MyApp extends StatelessWidget {
         '/route6': (BuildContext context) => const Rechercher(),
         '/route7': (BuildContext context) => const ResuRechercher(),
         '/route8': (BuildContext context) => const Cinema(),
-        '/route8': (BuildContext context) => const Cinema(),
       },
     );
   }
