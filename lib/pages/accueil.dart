@@ -56,7 +56,6 @@ class _accueilState extends State<accueil> {
                 onPressed: () {
                   Navigator.popAndPushNamed(context, '/route5');
                 }),
-            const SizedBox(height: 15),
             FloatingActionButton(
                 child: _map,
 
