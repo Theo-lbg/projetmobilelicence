@@ -16,7 +16,7 @@ class _FavorisState extends State<Favoris> {
       backgroundColor: Colors.white,
 
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.blueGrey,
         elevation: 0,
         actions: <Widget>[
           IconButton(
