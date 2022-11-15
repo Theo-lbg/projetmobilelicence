@@ -33,11 +33,6 @@ class _accueilState extends State<accueil> {
       body: Container(
         //Image en Background
         width: double.infinity,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("Asset/icon/SplashScreen.png"),
-              fit: BoxFit.cover),
-        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -57,17 +52,14 @@ class _accueilState extends State<accueil> {
           ],
         ),
       ),
-
       floatingActionButton: buildNavigationButton(),
-
     );
   }
 
   Widget buildNavigationButton() => FloatingActionButton(
-    child: _map,
+      child: _map,
       backgroundColor: Colors.green,
       onPressed: () {
         Navigator.pushNamed(context, '/route8');
-      }
-  );
+      });
 }

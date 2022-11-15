@@ -43,6 +43,13 @@ class _CinemaState extends State<Cinema> {
     position: const LatLng(50.43462972528501, 3.440865799982101),
   );
 
+  static final Marker _marker4 = Marker(
+    markerId: const MarkerId('_marker4'),
+    infoWindow: const InfoWindow(title: "Le Métropole"),
+    icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
+    position: const LatLng(50.63828464334376, 3.0666764870656613),
+  );
+
   @override
   void dispose() {
     _googleMapController.dispose();
@@ -74,7 +81,7 @@ class _CinemaState extends State<Cinema> {
           zoomControlsEnabled: false,
           initialCameraPosition: _positioncamera,
           onMapCreated: (controller) => _googleMapController = controller,
-          markers: {_votreposition, _marker1, _marker2, _marker3},
+          markers: {_votreposition, _marker1, _marker2, _marker3, _marker4},
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.white,
