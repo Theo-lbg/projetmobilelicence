@@ -9,6 +9,8 @@ class Cinema extends StatefulWidget {
 }
 
 class _CinemaState extends State<Cinema> {
+  bool _choixSwitch = false;
+  Color _color = Colors.white;
   static const _positioncamera =
       CameraPosition(target: LatLng(50.326361, 3.517028), zoom: 11.5);
 
@@ -62,7 +64,29 @@ class _CinemaState extends State<Cinema> {
           title: const Text("Vos Cinémas"),
           centerTitle: true,
           backgroundColor: Colors.blueGrey,
-          actions: [
+
+          actions: <Widget>[
+            Switch(
+                value: _choixSwitch,
+                activeColor: Colors.black,
+                activeTrackColor: Colors.grey,
+                inactiveTrackColor: Colors.grey,
+                inactiveThumbColor: Colors.white,
+                onChanged: (value) {
+                  setState(() {
+                    _choixSwitch = value;
+                    _choixSwitch ? _color =Colors.black : _color =Colors.white;
+                    _currentMapType = (_currentMapType == MapType.normal)
+                        ? MapType.hybrid
+                        : MapType.normal;
+                  });
+                }),
+          ],
+
+
+
+
+          /*actions: [
             TextButton(
               child: const Text("Hybride",
                   style: TextStyle(color: Colors.lightGreenAccent)),
@@ -74,7 +98,11 @@ class _CinemaState extends State<Cinema> {
                 })
               },
             ),
-          ],
+          ],*/
+
+
+
+
         ),
         body: GoogleMap(
           mapType: _currentMapType,
