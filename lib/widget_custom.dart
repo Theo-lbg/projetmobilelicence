@@ -7,7 +7,6 @@ class WidgetCustom extends StatelessWidget {
   WidgetCustom({
     required this.title,
     required this.duree,
-    required this.rating,
     required this.thumbnailUrl,
   });
   @override
@@ -74,8 +73,6 @@ class WidgetCustom extends StatelessWidget {
                         color: Colors.yellow,
                         size: 18,
                       ),
-                      SizedBox(width: 7),
-                      Text(rating),
                     ],
                   ),
                 ),
@@ -94,7 +91,7 @@ class WidgetCustom extends StatelessWidget {
                         size: 18,
                       ),
                       SizedBox(width: 7),
-                      Text(cookTime),
+                      Text(duree),
                     ],
                   ),
                 )
