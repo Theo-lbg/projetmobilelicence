@@ -61,12 +61,11 @@ class _CinemaState extends State<Cinema> {
         appBar: AppBar(
           title: const Text("Vos Cinémas"),
           centerTitle: true,
-          //backgroundColor: Color.fromARGB(255, 32, 124, 244),
-          backgroundColor : Colors.blueGrey,
+          backgroundColor: Colors.blueGrey,
           actions: [
             TextButton(
-              child: const Text("Hybride",style:TextStyle(color: Colors.lightGreenAccent)),
-
+              child: const Text("Hybride",
+                  style: TextStyle(color: Colors.lightGreenAccent)),
               onPressed: () => {
                 setState(() {
                   _currentMapType = (_currentMapType == MapType.normal)
@@ -87,7 +86,7 @@ class _CinemaState extends State<Cinema> {
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.white,
-          foregroundColor: Colors.blue,
+          foregroundColor: Colors.blueGrey,
           onPressed: () => _googleMapController
               .animateCamera(CameraUpdate.newCameraPosition(_positioncamera)),
           child: const Icon(Icons.center_focus_strong),
