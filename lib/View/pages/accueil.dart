@@ -38,7 +38,7 @@ class _accueilState extends State<accueil> {
               fit: BoxFit.cover),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             //Boutton central Liste des Films
             MaterialButton(
