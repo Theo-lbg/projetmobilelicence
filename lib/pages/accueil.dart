@@ -54,17 +54,20 @@ class _accueilState extends State<accueil> {
                 onPressed: () {
                   Navigator.popAndPushNamed(context, '/route5');
                 }),
-            SizedBox(
-              height: 15,
-            ),
-            FloatingActionButton(
-                child: _map,
-                onPressed: () {
-                  Navigator.pushNamed(context, '/route8');
-                }),
           ],
         ),
       ),
+
+      floatingActionButton: buildNavigationButton(),
+
     );
   }
+
+  Widget buildNavigationButton() => FloatingActionButton(
+    child: _map,
+      backgroundColor: Colors.green,
+      onPressed: () {
+        Navigator.pushNamed(context, '/route8');
+      }
+  );
 }
