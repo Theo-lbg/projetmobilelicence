@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:projetmobilelicence/pages/Favoris.dart';
-import 'package:projetmobilelicence/pages/Film.dart';
-import 'package:projetmobilelicence/pages/accueil.dart';
-import 'package:projetmobilelicence/pages/DetailFilm.dart';
-import 'package:projetmobilelicence/PagesRecherches//Rechercher.dart';
-import 'package:projetmobilelicence/PagesRecherches//ResuRechercher.dart';
-import 'package:projetmobilelicence/pages/cinema.dart';
+import 'package:projetmobilelicence/View/pages/Favoris.dart';
+import 'package:projetmobilelicence/Models/Film.dart';
+import 'package:projetmobilelicence/View/pages/accueil.dart';
+import 'package:projetmobilelicence/View/pages/DetailFilm.dart';
+import 'package:projetmobilelicence/View/PagesRecherches/Rechercher.dart';
+import 'package:projetmobilelicence/View/PagesRecherches/ResuRechercher.dart';
+import 'package:projetmobilelicence/View/pages/cinema.dart';
 
 void main() {
   runApp(const MyApp());
