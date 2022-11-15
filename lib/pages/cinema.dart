@@ -68,7 +68,7 @@ class _CinemaState extends State<Cinema> {
           actions: <Widget>[
             Switch(
                 value: _choixSwitch,
-                activeColor: Colors.blueGrey,
+                activeColor: Colors.black,
                 activeTrackColor: Colors.grey,
                 inactiveTrackColor: Colors.grey,
                 inactiveThumbColor: Colors.white,
