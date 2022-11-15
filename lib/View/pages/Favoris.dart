@@ -8,11 +8,30 @@ class Favoris extends StatefulWidget {
 }
 
 class _FavorisState extends State<Favoris> {
+  Icon _loupe = Icon(Icons.search, color: Colors.white);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(),
+
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        elevation: 0,
+        actions: <Widget>[
+          IconButton(
+            icon: _loupe,
+            onPressed: () {
+              Navigator.pushNamed(context, '/route6');
+            },
+          )
+        ],
+      ),
+
+
+
+
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
