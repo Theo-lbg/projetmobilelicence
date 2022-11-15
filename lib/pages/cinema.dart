@@ -59,12 +59,14 @@ class _CinemaState extends State<Cinema> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: const Text("Votre Ville"),
+          title: const Text("Vos Cinémas"),
           centerTitle: true,
-          backgroundColor: Color.fromARGB(255, 32, 124, 244),
+          //backgroundColor: Color.fromARGB(255, 32, 124, 244),
+          backgroundColor : Colors.blueGrey,
           actions: [
             TextButton(
-              child: const Text("Hybrid"),
+              child: const Text("Hybride",style:TextStyle(color: Colors.lightGreenAccent)),
+
               onPressed: () => {
                 setState(() {
                   _currentMapType = (_currentMapType == MapType.normal)
