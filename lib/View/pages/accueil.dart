@@ -25,7 +25,7 @@ class _accueilState extends State<accueil> {
           IconButton(
             icon: _loupe,
             onPressed: () {
-              Navigator.pushNamed(context, '/route6');
+              Navigator.pushNamed(context, '/route4');
             },
           )
         ],
