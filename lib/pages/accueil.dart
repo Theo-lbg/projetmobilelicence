@@ -10,7 +10,7 @@ class accueil extends StatefulWidget {
 
 class _accueilState extends State<accueil> {
   Color _color = Colors.white; //je definie la couleur de fond afin ensuite de la mettre transparente
-  Icon _loupe = Icon(Icons.search, color: Colors.black);
+  Icon _loupe = Icon(Icons.search, color: Colors.white);
   Icon _map = Icon(Icons.map, color: Colors.white);
 
   @override
@@ -18,7 +18,7 @@ class _accueilState extends State<accueil> {
     return Scaffold(
       backgroundColor: _color,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black,
         elevation: 0,
         actions: <Widget>[
           IconButton(
@@ -34,7 +34,7 @@ class _accueilState extends State<accueil> {
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("Asset/icon/SplashScreen.png"),
+              image: AssetImage("Asset/icon/background2.jpeg"),
               fit: BoxFit.cover),
         ),
         child: Column(
@@ -47,9 +47,9 @@ class _accueilState extends State<accueil> {
                   style: TextStyle(
                       //fontWeight: FontWeight.bold,
                       fontSize: 40,
-                      color: Colors.black),
+                      color: Colors.white),
                 ),
-                color: Colors.white38, //couleur de l'arriere de boutton
+                color: Colors.white10, //couleur de l'arriere de boutton
                 onPressed: () {
                   Navigator.popAndPushNamed(context, '/route5');
                 }),
@@ -62,7 +62,7 @@ class _accueilState extends State<accueil> {
 
   Widget buildNavigationButton() => FloatingActionButton(
       child: _map,
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.grey,
       onPressed: () {
         Navigator.pushNamed(context, '/route8');
       });
