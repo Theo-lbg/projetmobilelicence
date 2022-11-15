@@ -9,7 +9,8 @@ class accueil extends StatefulWidget {
 }
 
 class _accueilState extends State<accueil> {
-  Color _color = Colors.white; //je definie la couleur de fond afin ensuite de la mettre transparente
+  Color _color = Colors
+      .white; //je definie la couleur de fond afin ensuite de la mettre transparente
   Icon _loupe = Icon(Icons.search, color: Colors.white);
   Icon _map = Icon(Icons.map, color: Colors.white);
 
@@ -51,7 +52,7 @@ class _accueilState extends State<accueil> {
                 ),
                 color: Colors.white10, //couleur de l'arriere de boutton
                 onPressed: () {
-                  Navigator.popAndPushNamed(context, '/route5');
+                  Navigator.pushNamed(context, '/route5');
                 }),
           ],
         ),

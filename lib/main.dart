@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projetmobilelicence/View/pages/Favoris.dart';
-import 'package:projetmobilelicence/Models/Film.dart';
+import 'package:projetmobilelicence/View/pages/Film_view.dart';
 import 'package:projetmobilelicence/View/pages/accueil.dart';
 import 'package:projetmobilelicence/View/pages/DetailFilm.dart';
 import 'package:projetmobilelicence/View/PagesRecherches/Rechercher.dart';
