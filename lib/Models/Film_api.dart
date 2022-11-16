@@ -1,25 +1,22 @@
+import 'dart:convert' show jsonDecode;
+import 'package:http/http.dart' as http;
+import 'package:projetmobilelicence/Models/Film2.dart';
+
 class Film_api {
-  final String nom;
-  final String images;
-  final String duree;
+  static Future<List<Film>> getFilm() async {
+    var uri = Uri.https("https://omdbapi.com/");
 
-  Film_api({required this.nom, required this.images, required this.duree});
+    final response = await http.get(uri, headers: {
+      "apikey": "91fdcc20",
+    });
 
-  factory Film_api.fromJson(dynamic json) {
-    return Film_api(
-        nom: json['Title'] as String,
-        images: json['images'][0]['hostedLargeUrl'] as String,
-        duree: json['totalTime'] as String);
-  }
+    Map data = jsonDecode(response.body);
+    List _temp = [];
 
-  static List<Film_api> recipesFromSnapshot(List snapshot) {
-    return snapshot.map((data) {
-      return Film_api.fromJson(data);
-    }).toList();
-  }
+    for (var i in data['Search']) {
+      _temp.add(i);
+    }
 
-  @override
-  String toString() {
-    return 'Recipe {Title: $nom, images: $images, duree: $duree}';
+    return Film.FilmFromSnapshot(_temp);
   }
 }
