@@ -16,6 +16,7 @@ class _FilmState extends State<Film> {
   @override
   void initState() {
     super.initState();
+    getFilm();
   }
 
   Future<void> getFilm() async {
@@ -24,36 +25,27 @@ class _FilmState extends State<Film> {
       _isLoading = false;
     });
     print(_Film);
+    print("Coucou fdp");
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(),
-        body: Column(
-          children: <Widget>[
-            WidgetCustom(
-              duree: "15min",
-              thumbnailUrl: "",
-              title: "Avengers",
+      backgroundColor: Colors.white,
+      appBar: AppBar(),
+      body: _isLoading
+          ? Center(
+              child: CircularProgressIndicator(),
+            )
+          : ListView.builder(
+              itemCount: _Film.length,
+              itemBuilder: (context, index) {
+                return WidgetCustom(
+                    title: _Film[index].,
+                    duree: "test",
+                    thumbnailUrl: "");
+              },
             ),
-            WidgetCustom(
-              duree: "15min",
-              thumbnailUrl: "",
-              title: "Avengers",
-            ),
-            WidgetCustom(
-              duree: "15min",
-              thumbnailUrl: "",
-              title: "Avengers",
-            ),
-            WidgetCustom(
-              duree: "15min",
-              thumbnailUrl: "",
-              title: "Avengers",
-            ),
-          ],
-        ));
+    );
   }
 }
