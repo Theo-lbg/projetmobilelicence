@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
             ),
         '/route2': (BuildContext context) => const DetailFilm(),
         '/route4': (BuildContext context) => const Favoris(),
-        '/route5': (BuildContext context) => const Film(),
+        '/route5': (BuildContext context) => const Film_view(),
         '/route6': (BuildContext context) => const Rechercher(),
         '/route7': (BuildContext context) => const ResuRechercher(),
         '/route8': (BuildContext context) => const Cinema(),

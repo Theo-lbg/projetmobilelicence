@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:projetmobilelicence/Models/Film_api.dart';
 import 'package:projetmobilelicence/Widget/widget_custom.dart';
 
-class Film extends StatefulWidget {
-  const Film({super.key});
+class Film_view extends StatefulWidget {
+  const Film_view({super.key});
 
   @override
-  State<Film> createState() => _FilmState();
+  State<Film_view> createState() => _Film_viewState();
 }
 
-class _FilmState extends State<Film> {
-  late List<Film> _Film;
+class _Film_viewState extends State<Film_view> {
+  late List<Film_view> _Film;
   bool _isLoading = true;
 
   @override
@@ -20,12 +20,11 @@ class _FilmState extends State<Film> {
   }
 
   Future<void> getFilm() async {
-    _Film = (await Film_api.getFilm()).cast<Film>();
+    _Film = (await Film_api.getFilm()).cast<Film_view>();
     setState(() {
       _isLoading = false;
     });
     print(_Film);
-    print("Coucou fdp");
   }
 
   @override
@@ -41,9 +40,7 @@ class _FilmState extends State<Film> {
               itemCount: _Film.length,
               itemBuilder: (context, index) {
                 return WidgetCustom(
-                    title: _Film[index].,
-                    duree: "test",
-                    thumbnailUrl: "");
+                    title: _Film[index]., duree: "test", thumbnailUrl: "");
               },
             ),
     );
