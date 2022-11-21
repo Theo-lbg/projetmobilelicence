@@ -7,9 +7,9 @@ class Film {
 
   factory Film.fromJson(dynamic json) {
     return Film(
-        nom: json['Search'][0]['Title'] as String,
-        images: json['Search'][0]['Poster'] as String,
-        annee: json['Search'][0]['Year'] as String);
+        nom: json[0]['Title'] as String,
+        images: json[0]['Poster'] as String,
+        annee: json[0]['Year'] as String);
   }
 
   static List<Film> FilmFromSnapshot(List snapshot) {
