@@ -45,9 +45,7 @@ class WidgetCustom extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 5.0),
               child: Text(
                 title,
-                style: TextStyle(
-                  fontSize: 19,
-                ),
+                style: TextStyle(fontSize: 19, color: Colors.white),
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
                 textAlign: TextAlign.center,
@@ -69,9 +67,13 @@ class WidgetCustom extends StatelessWidget {
                   child: Row(
                     children: [
                       Icon(
-                        Icons.star,
+                        Icons.schedule,
                         color: Colors.yellow,
                         size: 18,
+                      ),
+                      Text(
+                        Year,
+                        style: TextStyle(color: Colors.white),
                       ),
                     ],
                   ),
@@ -86,12 +88,11 @@ class WidgetCustom extends StatelessWidget {
                   child: Row(
                     children: [
                       Icon(
-                        Icons.schedule,
+                        Icons.favorite_border,
                         color: Colors.yellow,
                         size: 18,
                       ),
                       SizedBox(width: 7),
-                      Text(Year),
                     ],
                   ),
                 )

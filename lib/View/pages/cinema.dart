@@ -64,7 +64,6 @@ class _CinemaState extends State<Cinema> {
           title: const Text("Vos Cinémas"),
           centerTitle: true,
           backgroundColor: Colors.blueGrey,
-
           actions: <Widget>[
             Switch(
                 value: _choixSwitch,
@@ -75,16 +74,15 @@ class _CinemaState extends State<Cinema> {
                 onChanged: (value) {
                   setState(() {
                     _choixSwitch = value;
-                    _choixSwitch ? _color =Colors.black : _color =Colors.white;
+                    _choixSwitch
+                        ? _color = Colors.black
+                        : _color = Colors.white;
                     _currentMapType = (_currentMapType == MapType.normal)
                         ? MapType.hybrid
                         : MapType.normal;
                   });
                 }),
           ],
-
-
-
 
           /*actions: [
             TextButton(
@@ -99,10 +97,6 @@ class _CinemaState extends State<Cinema> {
               },
             ),
           ],*/
-
-
-
-
         ),
         body: GoogleMap(
           mapType: _currentMapType,
