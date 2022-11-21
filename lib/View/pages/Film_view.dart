@@ -32,17 +32,7 @@ class _Film_viewState extends State<Film_view> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(),
-      body: _isLoading
-          ? Center(
-              child: CircularProgressIndicator(),
-            )
-          : ListView.builder(
-              itemCount: _Film.length,
-              itemBuilder: (context, index) {
-                return WidgetCustom(
-                    title: _Film[index]., duree: "test", thumbnailUrl: "");
-              },
-            ),
+      body: null,
     );
   }
 }
