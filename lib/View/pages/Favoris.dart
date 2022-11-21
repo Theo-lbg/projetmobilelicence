@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:projetmobilelicence/Models/Film_api.dart';
 import 'package:projetmobilelicence/View/pages/accueil.dart';
+import 'package:projetmobilelicence/View/pages/Film_view.dart';
 
 class Favoris extends StatefulWidget {
   const Favoris({super.key});
@@ -11,6 +13,11 @@ class Favoris extends StatefulWidget {
 
 class _FavorisState extends State<Favoris> {
   Icon _loupe = Icon(Icons.search, color: Colors.white);
+  int currentIndex = 0;
+  final screens = [
+    accueil(title: 'Accueil',),
+    Film_api
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -34,36 +41,33 @@ class _FavorisState extends State<Favoris> {
 
 
 
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
-        ),
-      ),
+      body: screens[currentIndex],
 
 
 
 
-      bottomNavigationBar: GNav(
+      bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.blueGrey,
-        color: Colors.white,
-        activeColor: Colors.white,
-        //tabBackgroundColor: Colors.grey, //avoir une couleur de fond quand on clique sur l'icone en question
-        padding: EdgeInsets.all(16),
-        gap: 8,
-        tabs: const [
-          GButton(
-              icon: Icons.home,
-              text: 'Accueil',
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white70,
+        currentIndex: currentIndex,
+        onTap: (index) => setState(() => currentIndex = index),
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label:'Accueil',
+            backgroundColor: Colors.blueGrey,
           ),
-          GButton(
-            icon: Icons.movie_creation_outlined,
-            text: 'Films',
+          BottomNavigationBarItem(
+            icon: Icon(Icons.movie_creation_outlined),
+            label:'Films',
+            backgroundColor: Colors.blueGrey,
           ),
-          GButton(
-            icon: Icons.favorite_border,
-            text: 'Favoris',
-          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite_border),
+            label:'Favoris',
+            backgroundColor: Colors.blueGrey,
+          )
         ],
       ),
     );
