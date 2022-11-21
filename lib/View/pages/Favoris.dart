@@ -16,7 +16,6 @@ class _FavorisState extends State<Favoris> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
         elevation: 0,
@@ -29,53 +28,40 @@ class _FavorisState extends State<Favoris> {
           )
         ],
       ),
-
-
-
-
-
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[],
         ),
       ),
-
-
-
-
-
-
       bottomNavigationBar: BottomAppBar(
           shape: const CircularNotchedRectangle(),
           child: Container(
               color: Colors.blueGrey,
-              child:
-              Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children:  <Widget>[
+                children: <Widget>[
                   IconButton(
-                      onPressed: (){
+                      onPressed: () {
                         Navigator.pushNamed(context, '/route1');
                       },
-                      icon: Icon(Icons.home, color: Colors.white70,)
-                  ),
+                      icon: Icon(
+                        Icons.home,
+                        color: Colors.white70,
+                      )),
                   IconButton(
-                      onPressed: (){
+                      onPressed: () {
                         Navigator.pushNamed(context, '/route5');
                       },
-                      icon: Icon(Icons.movie_creation_outlined, color: Colors.white70)
-                  ),
+                      icon: Icon(Icons.movie_creation_outlined,
+                          color: Colors.white70)),
                   IconButton(
-                      onPressed: (){
+                      onPressed: () {
                         Navigator.pushNamed(context, '/route4');
                       },
-                      icon: Icon(Icons.favorite_border, color: Colors.white)
-                  ),
+                      icon: Icon(Icons.favorite_border, color: Colors.white)),
                 ],
-              )
-          )
-      ),
+              ))),
     );
   }
 }

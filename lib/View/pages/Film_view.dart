@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projetmobilelicence/Models/Film.dart';
 import 'package:projetmobilelicence/Models/Film_api.dart';
 import 'package:projetmobilelicence/Widget/widget_custom.dart';
 
@@ -10,7 +11,7 @@ class Film_view extends StatefulWidget {
 }
 
 class _Film_viewState extends State<Film_view> {
-  late List<Film_view> _Film;
+  late List<Film> _Film;
   bool _isLoading = true;
 
   @override
@@ -20,7 +21,7 @@ class _Film_viewState extends State<Film_view> {
   }
 
   Future<void> getFilm() async {
-    _Film = (await Film_api.getFilm()).cast<Film_view>();
+    _Film = (await Film_api.getFilm()).cast<Film>();
     setState(() {
       _isLoading = false;
     });
@@ -32,7 +33,20 @@ class _Film_viewState extends State<Film_view> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(),
-      body: null,
+      body: _isLoading
+          ? Center(
+              child: CircularProgressIndicator(),
+            )
+          : ListView.builder(
+              itemCount: _Film.length,
+              itemBuilder: (context, index) {
+                return WidgetCustom(
+                  title: _Film[index].nom,
+                  Year: _Film[index].annee,
+                  thumbnailUrl: _Film[index].images,
+                );
+              },
+            ),
     );
   }
 }
