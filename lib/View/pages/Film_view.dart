@@ -41,10 +41,16 @@ class _Film_viewState extends State<Film_view> {
               itemCount: _Film.length,
               itemBuilder: (context, index) {
                 return WidgetCustom(
+<<<<<<< HEAD
                   title: _Film[index].nom,
                   Year: _Film[index].annee,
                   thumbnailUrl: _Film[index].images,
                 );
+=======
+                    title: _Film[index].nom,
+                    Year: _Film[index].annee,
+                    thumbnailUrl: _Film[index].images);
+>>>>>>> 223933769c483327aff8e58e0174e3e311af1c71
               },
             ),
     );

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class WidgetCustom extends StatelessWidget {
   final String title;
-  final String duree;
+  final String Year;
   final String thumbnailUrl;
   WidgetCustom({
     required this.title,
-    required this.duree,
+    required this.Year,
     required this.thumbnailUrl,
   });
   @override
@@ -91,7 +91,7 @@ class WidgetCustom extends StatelessWidget {
                         size: 18,
                       ),
                       SizedBox(width: 7),
-                      Text(duree),
+                      Text(Year),
                     ],
                   ),
                 )
