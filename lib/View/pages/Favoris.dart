@@ -15,7 +15,9 @@ class _FavorisState extends State<Favoris> {
   Icon _loupe = Icon(Icons.search, color: Colors.white);
   int currentIndex = 0;
   final screens = [
-    accueil(title: 'Accueil',),
+    accueil(
+      title: 'Accueil',
+    ),
     Film_api
   ];
 
@@ -37,14 +39,7 @@ class _FavorisState extends State<Favoris> {
         ],
       ),
 
-
-
-
-
-      body: screens[currentIndex],
-
-
-
+      // body: screens[currentIndex],
 
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.blueGrey,
@@ -55,17 +50,17 @@ class _FavorisState extends State<Favoris> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label:'Accueil',
+            label: 'Accueil',
             backgroundColor: Colors.blueGrey,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.movie_creation_outlined),
-            label:'Films',
+            label: 'Films',
             backgroundColor: Colors.blueGrey,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite_border),
-            label:'Favoris',
+            label: 'Favoris',
             backgroundColor: Colors.blueGrey,
           )
         ],
