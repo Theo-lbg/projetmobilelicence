@@ -14,11 +14,7 @@ class _DetailFilmState extends State<DetailFilm> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text("Détails du Film"),
-        centerTitle: true,
-        backgroundColor: Colors.blueGrey,
-      ),
+      appBar: AppBar(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
