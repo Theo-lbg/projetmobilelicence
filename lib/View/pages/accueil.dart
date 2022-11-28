@@ -21,14 +21,6 @@ class _accueilState extends State<accueil> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         elevation: 0,
-        actions: <Widget>[
-          IconButton(
-            icon: _loupe,
-            onPressed: () {
-              Navigator.pushNamed(context, '/route4');
-            },
-          )
-        ],
       ),
       body: Container(
         //Image en Background
