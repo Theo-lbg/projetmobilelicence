@@ -32,7 +32,11 @@ class _Film_viewState extends State<Film_view> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text("Votre liste de films"),
+        centerTitle: true,
+        backgroundColor: Colors.blueGrey,
+      ),
       body: _isLoading
           ? Center(
               child: CircularProgressIndicator(),
