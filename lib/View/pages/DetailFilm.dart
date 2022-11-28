@@ -9,12 +9,16 @@ class DetailFilm extends StatefulWidget {
 
 class _DetailFilmState extends State<DetailFilm> {
   int currentIndex = 0;
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text("Détails du Film"),
+        centerTitle: true,
+        backgroundColor: Colors.blueGrey,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
