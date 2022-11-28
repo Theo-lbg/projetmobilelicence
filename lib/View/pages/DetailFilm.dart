@@ -32,135 +32,6 @@ class _DetailFilmState extends State<DetailFilm> {
 
   @override
   Widget build(BuildContext context) {
-    Widget PosterSlider() {
-      return ImageSlideshow(
-        width: MediaQuery.of(context).size.width,
-        height: 222,
-        initialPage: 0,
-        indicatorColor: Colors.deepPurple,
-        indicatorBackgroundColor: Colors.grey,
-        children: [],
-        autoPlayInterval: 5000,
-        isLoop: true,
-      );
-    }
-
-    Widget ShowsSliderWidget(List<dynamic> myList) {
-      return Container(
-        width: MediaQuery.of(context).size.width,
-        height: 230,
-        child: Row(
-          children: [
-            Expanded(
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                itemCount: myList.length,
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      // Get.to(() => Details(),
-                      //     arguments: myList[index],
-                      //     duration: Duration(milliseconds: 700),
-                      //     transition: Transition.leftToRightWithFade);
-                    },
-                    child: Container(
-                      width: 150,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(myList[index].Image),
-                          fit: BoxFit.fill,
-                        ),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            right: 8,
-                            top: 8,
-                            child: Container(
-                              width: 55,
-                              height: 25,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  color: Colors.blueGrey),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.blueGrey,
-                                    size: 19,
-                                  ),
-                                  myList[index].IMDbRating.toString().isNotEmpty
-                                      ? Text(
-                                          myList[index].IMDbRating,
-                                          style: TextStyle(
-                                            color: Colors.blueGrey,
-                                            fontSize: 14,
-                                          ),
-                                        )
-                                      : Text(
-                                          'TBA',
-                                          style: TextStyle(
-                                            color: Colors.blueGrey,
-                                            fontSize: 14,
-                                          ),
-                                        ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            bottom: 0,
-                            child: Container(
-                              width: 150,
-                              height: 55,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(15),
-                                    bottomRight: Radius.circular(15),
-                                  ),
-                                  color: Colors.blueGrey),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.all(5),
-                                      child: Text(
-                                        myList[index].Title.toString().length >
-                                                28
-                                            ? myList[index]
-                                                    .Title
-                                                    .toString()
-                                                    .substring(0, 28) +
-                                                '...'
-                                            : myList[index].Title.toString(),
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  );
-                },
-                separatorBuilder: (context, index) => SizedBox(width: 15),
-              ),
-            )
-          ],
-        ),
-      );
-    }
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -171,9 +42,9 @@ class _DetailFilmState extends State<DetailFilm> {
       body: _isLoading
           ? Center(child: CircularProgressIndicator())
           : ListView.builder(
-            itemCount: 1,
-            itemBuilder: (context, int index) {
-              return Column(
+              itemCount: _Film.length,
+              itemBuilder: (context, int index) {
+                return Column(
                   children: [
                     Container(
                       height: 310,
@@ -317,9 +188,7 @@ class _DetailFilmState extends State<DetailFilm> {
                             children: [
                               Expanded(
                                 child: ElevatedButton(
-                                  onPressed: () async {
-                                 
-                                  },
+                                  onPressed: () async {},
                                   child: Text('Remove from Favorites'),
                                   style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.blueGrey),
@@ -340,7 +209,8 @@ class _DetailFilmState extends State<DetailFilm> {
                           ),
                           Text(
                             'teest', //info.Plot,
-                            style: TextStyle(color: Colors.blueGrey, fontSize: 15),
+                            style:
+                                TextStyle(color: Colors.blueGrey, fontSize: 15),
                           ),
                           SizedBox(
                             height: 10,
@@ -382,7 +252,7 @@ class _DetailFilmState extends State<DetailFilm> {
                     ),
                   ],
                 );
-  }),
+              }),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.blueGrey,
         selectedItemColor: Colors.white,
