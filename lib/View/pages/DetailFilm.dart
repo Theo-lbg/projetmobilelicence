@@ -170,24 +170,15 @@ class _DetailFilmState extends State<DetailFilm> {
       ),
       body: _isLoading
           ? Center(child: CircularProgressIndicator())
-          : ListView(
-              children: [
-                Column(
+          : ListView.builder(
+            itemCount: 1,
+            itemBuilder: (context, int index) {
+              return Column(
                   children: [
                     Container(
                       height: 310,
                       child: Stack(
                         children: [
-                          Positioned(
-                              top: 5,
-                              left: 5,
-                              child: IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.arrow_back_ios,
-                                  color: Colors.white70,
-                                ),
-                              )),
                           Positioned(
                             top: 130,
                             child: Container(
@@ -202,7 +193,8 @@ class _DetailFilmState extends State<DetailFilm> {
                                     height: 165,
                                     decoration: BoxDecoration(
                                         image: DecorationImage(
-                                            image: NetworkImage(''),
+                                            image: NetworkImage(
+                                                _Film[index].images),
                                             fit: BoxFit.fill)),
                                   ),
                                   Container(
@@ -218,13 +210,13 @@ class _DetailFilmState extends State<DetailFilm> {
                                             decoration: BoxDecoration(
                                                 border: Border.all(
                                                     width: .3,
-                                                    color: Colors.white),
+                                                    color: Colors.black),
                                                 borderRadius:
                                                     BorderRadius.circular(5)),
                                             child: Text(
-                                              "test",
+                                              _Film[index].annee,
                                               style: TextStyle(
-                                                  color: Colors.white,
+                                                  color: Colors.black,
                                                   fontSize: 15),
                                             ),
                                           ),
@@ -274,8 +266,8 @@ class _DetailFilmState extends State<DetailFilm> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SelectableText(
-                            "test",
-                            style: TextStyle(color: Colors.white, fontSize: 25),
+                            _Film[index].nom,
+                            style: TextStyle(color: Colors.black, fontSize: 25),
                           ),
                           SizedBox(
                             height: 5,
@@ -286,7 +278,7 @@ class _DetailFilmState extends State<DetailFilm> {
                               Text(
                                 'Release Date :  ', //+ info.ReleaseDate,
                                 style: TextStyle(
-                                    color: Colors.white54, fontSize: 15),
+                                    color: Colors.blueGrey, fontSize: 15),
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -311,7 +303,7 @@ class _DetailFilmState extends State<DetailFilm> {
                                     child: Text(
                                       "TBA",
                                       style: TextStyle(
-                                          color: Colors.white60, fontSize: 20),
+                                          color: Colors.blueGrey, fontSize: 20),
                                     ),
                                   ),
                                 ],
@@ -326,39 +318,11 @@ class _DetailFilmState extends State<DetailFilm> {
                               Expanded(
                                 child: ElevatedButton(
                                   onPressed: () async {
-                                    print(show.isFav);
-                                    if (show.isFav == false) {
-                                      setState(() {
-                                        Provider.of<TopShows>(context,
-                                                listen: false)
-                                            .isFav = true;
-                                        Provider.of<TopShows>(context,
-                                                listen: false)
-                                            .updateFav(show, true);
-                                        Get.snackbar('Added To Favourites', '',
-                                            duration:
-                                                Duration(milliseconds: 1000));
-                                      });
-                                    } else {
-                                      setState(() {
-                                        Provider.of<TopShows>(context,
-                                                listen: false)
-                                            .isFav = false;
-                                        Provider.of<TopShows>(context,
-                                                listen: false)
-                                            .updateFav(show, false);
-                                        Get.snackbar(
-                                            'Removed from Favourites', '',
-                                            duration:
-                                                Duration(milliseconds: 1000));
-                                      });
-                                    }
+                                 
                                   },
-                                  child: Text(!show.isFav
-                                      ? 'Add to Favorites'
-                                      : 'Remove from Favorites'),
+                                  child: Text('Remove from Favorites'),
                                   style: ElevatedButton.styleFrom(
-                                      primary: deepPurple),
+                                      backgroundColor: Colors.blueGrey),
                                 ),
                               ),
                             ],
@@ -367,7 +331,7 @@ class _DetailFilmState extends State<DetailFilm> {
                             height: 10,
                           ),
                           Divider(
-                            color: Colors.white24,
+                            color: Colors.blueGrey,
                             endIndent: 35,
                             thickness: 1,
                           ),
@@ -376,13 +340,13 @@ class _DetailFilmState extends State<DetailFilm> {
                           ),
                           Text(
                             'teest', //info.Plot,
-                            style: TextStyle(color: Colors.white, fontSize: 15),
+                            style: TextStyle(color: Colors.blueGrey, fontSize: 15),
                           ),
                           SizedBox(
                             height: 10,
                           ),
                           Divider(
-                            color: Colors.white24,
+                            color: Colors.blueGrey,
                             endIndent: 35,
                             thickness: 1,
                           ),
@@ -392,7 +356,7 @@ class _DetailFilmState extends State<DetailFilm> {
                           Text(
                             'Directors : ', //+ info.Directors,
                             style:
-                                TextStyle(color: Colors.white70, fontSize: 14),
+                                TextStyle(color: Colors.blueGrey, fontSize: 14),
                           ),
                           SizedBox(
                             height: 10,
@@ -400,13 +364,13 @@ class _DetailFilmState extends State<DetailFilm> {
                           Text(
                             'Produced By : ', //+ info.Companies,
                             style:
-                                TextStyle(color: Colors.white70, fontSize: 13),
+                                TextStyle(color: Colors.blueGrey, fontSize: 13),
                           ),
                           SizedBox(
                             height: 10,
                           ),
                           Divider(
-                            color: Colors.white24,
+                            color: Colors.blueGrey,
                             endIndent: 35,
                             thickness: 1,
                           ),
@@ -417,9 +381,8 @@ class _DetailFilmState extends State<DetailFilm> {
                       ),
                     ),
                   ],
-                ),
-              ],
-            ),
+                );
+  }),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.blueGrey,
         selectedItemColor: Colors.white,
