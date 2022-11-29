@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:projetmobilelicence/View/pages/Film_view.dart';
 import 'package:projetmobilelicence/View/pages/accueil.dart';
+=======
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:projetmobilelicence/Models/Film.dart';
+import 'package:projetmobilelicence/Models/Film_api.dart';
+>>>>>>> main
 =======
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:projetmobilelicence/Models/Film.dart';
@@ -19,7 +25,10 @@ class _DetailFilmState extends State<DetailFilm> {
   int currentIndex = 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> main
   late List<Film> _Film;
   bool _isLoading = true;
 
@@ -37,6 +46,9 @@ class _DetailFilmState extends State<DetailFilm> {
     print(_Film);
   }
 
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
   @override
   Widget build(BuildContext context) {
@@ -47,6 +59,7 @@ class _DetailFilmState extends State<DetailFilm> {
         centerTitle: true,
         backgroundColor: Colors.blueGrey,
       ),
+<<<<<<< HEAD
 <<<<<<< HEAD
       body: Center(
         child: Column(
@@ -59,6 +72,8 @@ class _DetailFilmState extends State<DetailFilm> {
       ),
 
 =======
+=======
+>>>>>>> main
       body: _isLoading
           ? Center(child: CircularProgressIndicator())
           : ListView.builder(
@@ -273,6 +288,9 @@ class _DetailFilmState extends State<DetailFilm> {
                   ],
                 );
               }),
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.blueGrey,
