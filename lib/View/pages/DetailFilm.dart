@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:projetmobilelicence/View/pages/Film_view.dart';
+import 'package:projetmobilelicence/View/pages/accueil.dart';
 
 class DetailFilm extends StatefulWidget {
   const DetailFilm({super.key});
@@ -9,7 +11,7 @@ class DetailFilm extends StatefulWidget {
 
 class _DetailFilmState extends State<DetailFilm> {
   int currentIndex = 0;
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +24,10 @@ class _DetailFilmState extends State<DetailFilm> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
+          children: <Widget>[
+            accueil(title: "Home"),
+            Film_view(),
+          ],
         ),
       ),
 
