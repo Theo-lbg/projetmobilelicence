@@ -1,18 +1,9 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-<<<<<<< HEAD
 import 'package:projetmobilelicence/View/pages/Film_view.dart';
 import 'package:projetmobilelicence/View/pages/accueil.dart';
-=======
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:projetmobilelicence/Models/Film.dart';
 import 'package:projetmobilelicence/Models/Film_api.dart';
->>>>>>> main
-=======
-import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-import 'package:projetmobilelicence/Models/Film.dart';
-import 'package:projetmobilelicence/Models/Film_api.dart';
->>>>>>> main
 
 class DetailFilm extends StatefulWidget {
   const DetailFilm({super.key});
@@ -23,12 +14,6 @@ class DetailFilm extends StatefulWidget {
 
 class _DetailFilmState extends State<DetailFilm> {
   int currentIndex = 0;
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> main
   late List<Film> _Film;
   bool _isLoading = true;
 
@@ -46,10 +31,6 @@ class _DetailFilmState extends State<DetailFilm> {
     print(_Film);
   }
 
-<<<<<<< HEAD
->>>>>>> main
-=======
->>>>>>> main
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,21 +40,6 @@ class _DetailFilmState extends State<DetailFilm> {
         centerTitle: true,
         backgroundColor: Colors.blueGrey,
       ),
-<<<<<<< HEAD
-<<<<<<< HEAD
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            accueil(title: "Home"),
-            Film_view(),
-          ],
-        ),
-      ),
-
-=======
-=======
->>>>>>> main
       body: _isLoading
           ? Center(child: CircularProgressIndicator())
           : ListView.builder(
@@ -288,10 +254,6 @@ class _DetailFilmState extends State<DetailFilm> {
                   ],
                 );
               }),
-<<<<<<< HEAD
->>>>>>> main
-=======
->>>>>>> main
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.blueGrey,
         selectedItemColor: Colors.white,
