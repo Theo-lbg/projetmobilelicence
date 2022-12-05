@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:projetmobilelicence/View/pages/Favoris.dart';
 import 'package:projetmobilelicence/View/pages/Film_view.dart';
 import 'package:projetmobilelicence/View/pages/accueil.dart';
-import 'package:projetmobilelicence/View/pages/DetailFilm.dart';
 import 'package:projetmobilelicence/View/pages/cinema.dart';
 
 void main() {
@@ -25,11 +24,9 @@ class MyApp extends StatelessWidget {
         '/route1': (BuildContext context) => const accueil(
               title: 'Notre première Application',
             ),
-        '/route2': (BuildContext context) => const DetailFilm(),
-        '/route4': (BuildContext context) => const Favoris(),
-        '/route5': (BuildContext context) => const Film_view(),
-        '/route8': (BuildContext context) => const Cinema(),
-        '/route9': (BuildContext context) => const DetailFilm(),
+        '/route2': (BuildContext context) => const Favoris(),
+        '/route3': (BuildContext context) => const Film_view(),
+        '/route4': (BuildContext context) => const Cinema(),
       },
     );
   }

@@ -44,7 +44,8 @@ class _accueilState extends State<accueil> {
                 ),
                 color: Colors.white10, //couleur de l'arriere de boutton
                 onPressed: () {
-                  Navigator.pushNamed(context, '/route5');
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, '/route3', (route) => false);
                 }),
           ],
         ),
@@ -57,6 +58,6 @@ class _accueilState extends State<accueil> {
       child: _map,
       backgroundColor: Colors.grey,
       onPressed: () {
-        Navigator.pushNamed(context, '/route8');
+        Navigator.pushNamed(context, '/route4');
       });
 }
