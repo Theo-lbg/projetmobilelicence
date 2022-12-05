@@ -33,7 +33,8 @@ class _FavorisState extends State<Favoris> {
                 children: <Widget>[
                   IconButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/route1');
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, '/route1', (route) => false);
                       },
                       icon: Icon(
                         Icons.home,
