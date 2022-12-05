@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:projetmobilelicence/View/pages/accueil.dart';
 
 class Favoris extends StatefulWidget {
   const Favoris({super.key});
@@ -19,14 +17,6 @@ class _FavorisState extends State<Favoris> {
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
         elevation: 0,
-        actions: <Widget>[
-          IconButton(
-            icon: _loupe,
-            onPressed: () {
-              Navigator.pushNamed(context, '/route6');
-            },
-          )
-        ],
       ),
       body: Center(
         child: Column(
@@ -51,15 +41,11 @@ class _FavorisState extends State<Favoris> {
                       )),
                   IconButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/route5');
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, '/route3', (route) => false);
                       },
                       icon: Icon(Icons.movie_creation_outlined,
                           color: Colors.white70)),
-                  IconButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/route4');
-                      },
-                      icon: Icon(Icons.favorite_border, color: Colors.white)),
                 ],
               ))),
     );

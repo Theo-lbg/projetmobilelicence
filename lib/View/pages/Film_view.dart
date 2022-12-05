@@ -51,6 +51,33 @@ class _Film_viewState extends State<Film_view> {
                 );
               },
             ),
+      bottomNavigationBar: BottomAppBar(
+          shape: const CircularNotchedRectangle(),
+          child: Container(
+              color: Colors.blueGrey,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  IconButton(
+                      onPressed: () {
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, '/route1', (route) => false);
+                      },
+                      icon: Icon(
+                        Icons.home,
+                        color: Colors.white70,
+                      )),
+                  // IconButton(
+                  //     onPressed: null,
+                  //     icon: Icon(Icons.movie_creation_outlined,
+                  //         color: Colors.white70)),
+                  IconButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/route2');
+                      },
+                      icon: Icon(Icons.favorite_border, color: Colors.white)),
+                ],
+              ))),
     );
   }
 }
