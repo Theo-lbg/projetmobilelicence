@@ -15,6 +15,7 @@ class _FavorisState extends State<Favoris> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        title: const Text("Vos Favoris"),
         backgroundColor: Colors.blueGrey,
         elevation: 0,
       ),
