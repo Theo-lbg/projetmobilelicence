@@ -88,6 +88,20 @@ class _AddButton extends StatelessWidget{
         (favoritepage) => favoritepage.items.contains(item),
     );
 
-    return IconButton 
+    return IconButton(
+      icon: isInFavoritePage
+          ? Icon(Icons.favorite,color: Colors.red)
+          : Icon(Icons.favorite_border),
+      onPressed: isInFavoritePage
+        ? () {
+        var favoritepage = context.read<FavoritePageModel>();
+        favoritepage.remove(item);
+      }
+      : () {
+        var favoritepage = context.read<FavoritePageModel>();
+        favoritepage.add(item);
+      },
+    );
+
   }
 }

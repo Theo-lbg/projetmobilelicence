@@ -3,6 +3,8 @@ import 'package:projetmobilelicence/View/pages/Favoris.dart';
 import 'package:projetmobilelicence/View/pages/Film_view.dart';
 import 'package:projetmobilelicence/View/pages/accueil.dart';
 import 'package:projetmobilelicence/View/pages/cinema.dart';
+import 'package:projetmobilelicence/View/pages/favorite_list.dart';
+import 'package:projetmobilelicence/View/pages/favorite_page.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -28,6 +30,8 @@ class MyApp extends StatelessWidget {
         '/route2': (BuildContext context) => const Favoris(),
         '/route3': (BuildContext context) => const Film_view(),
         '/route4': (BuildContext context) => const Cinema(),
+        '/' : (context) => FavoriteList(),
+        '/favoritepage' : (context) => FavoritePage(),
       },
     );
   }
