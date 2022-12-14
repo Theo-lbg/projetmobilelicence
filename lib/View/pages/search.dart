@@ -1,60 +1,71 @@
 import 'package:flutter/material.dart';
-import 'package:projetmobilelicence/Models/Film.dart';
-import 'package:projetmobilelicence/Models/Film_api.dart';
-import 'package:projetmobilelicence/Widget/widget_custom.dart';
 
-class search extends StatefulWidget {
-  const search({super.key});
-
-  @override
-  State<search> createState() => _searchState();
-}
-
-class _searchState extends State<search> {
-  late List<Film> _Film;
-  bool _isLoading = false;
-  late Map<String, dynamic> mapSearch;
-
-  @override
-  void initState() {
-    super.initState();
-    getFilm();
-  }
-
-  Future<void> getFilm() async {
-    _Film = (await Film_api.getFilm()).cast<Film>();
-    setState(() {
-      _isLoading = false;
-    });
-    print(_Film);
-  }
-
-  void getSearchResu(search) async {
-    mapSearch = await getFilmSearch(search);
-    setState(() {
-      _isLoading = true;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text("Votre liste de films"),
-        // centerTitle: true,
-        // backgroundColor: Colors.blueGrey,
-        // elevation: 0,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {
-              Navigator.pushNamed(context, "/route5");
-            },
-          ),
-        ],
-      ),
-      body: null,
+class search extends SearchDelegate {
+  List<String> Title = [
+    "The Avengers",
+    "Avengers: Endgame",
+    "Avengers: Infinity War",
+    "Avengers: Age of Ultron",
+    "The Avengers",
+    "The Avengers: Earth's Mightiest Heroes",
+    "Ultimate Avengers: The Movie",
+    "Ultimate Avengers II",
+    "The Avengers",
+    "Avengers Assemble",
+  ];
+  Widget? buildLeading(BuildContext context) {
+    return IconButton(
+      icon: Icon(Icons.arrow_back),
+      onPressed: () {
+        Navigator.pop(context);
+      },
     );
+  }
+
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: Icon(Icons.clear),
+        onPressed: () {
+          query = "";
+        },
+      ),
+    ];
+  }
+
+  Widget buildResults(BuildContext context) {
+    List<String> searchResults = [];
+    for (var title in Title) {
+      if (title.toLowerCase().contains(query.toLowerCase())) {
+        searchResults.add(title);
+      }
+    }
+    return ListView.builder(
+        itemCount: searchResults.length,
+        itemBuilder: (context, index) {
+          final item = searchResults[index];
+          return ListTile(
+            title: Text(item),
+            onTap: () {
+              query = item;
+              showResults(context);
+            },
+          );
+        });
+  }
+
+  Widget buildSuggestions(BuildContext context) {
+    return ListView.builder(
+        itemCount: Title.length,
+        itemBuilder: (context, index) {
+          final item = Title[index];
+          return ListTile(
+            title: Text(Title[index]),
+            onTap: () {
+              query = item;
+              showResults(context);
+            },
+          );
+        });
   }
 }

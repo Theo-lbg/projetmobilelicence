@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projetmobilelicence/Models/Film.dart';
 import 'package:projetmobilelicence/Models/Film_api.dart';
+import 'package:projetmobilelicence/View/pages/search.dart';
 import 'package:projetmobilelicence/Widget/widget_custom.dart';
 
 class Film_view extends StatefulWidget {
@@ -34,14 +35,14 @@ class _Film_viewState extends State<Film_view> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text("Votre liste de films"),
-        // centerTitle: true,
-        // backgroundColor: Colors.blueGrey,
-        // elevation: 0,
+        centerTitle: true,
+        backgroundColor: Colors.blueGrey,
+        elevation: 0,
         actions: [
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {
-              Navigator.pushNamed(context, "/route5");
+              showSearch(context: context, delegate: search());
             },
           ),
         ],
