@@ -15,9 +15,7 @@ class WidgetCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.pushNamed(context, '/route2');
-      },
+      onTap: null,
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
         width: MediaQuery.of(context).size.width,
