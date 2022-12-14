@@ -34,7 +34,7 @@ class _Film_viewState extends State<Film_view> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text("Votre liste de films"),
+        title: const Text("Ma liste de films"),
         centerTitle: true,
         backgroundColor: Colors.blueGrey,
         elevation: 0,
