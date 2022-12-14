@@ -3,6 +3,7 @@ import 'package:projetmobilelicence/View/pages/Favoris.dart';
 import 'package:projetmobilelicence/View/pages/Film_view.dart';
 import 'package:projetmobilelicence/View/pages/accueil.dart';
 import 'package:projetmobilelicence/View/pages/cinema.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());

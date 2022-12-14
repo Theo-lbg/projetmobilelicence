@@ -57,6 +57,7 @@ class _Film_viewState extends State<Film_view> {
                   title: _Film[index].nom,
                   Year: _Film[index].annee,
                   thumbnailUrl: _Film[index].images,
+                  Type: _Film[index].type,
                 );
               },
             ),

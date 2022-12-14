@@ -4,10 +4,13 @@ class WidgetCustom extends StatelessWidget {
   final String title;
   final String Year;
   final String thumbnailUrl;
+  final String Type;
   WidgetCustom({
     required this.title,
     required this.Year,
     required this.thumbnailUrl,
+    required this.Type,
+
   });
   @override
   Widget build(BuildContext context) {
@@ -90,17 +93,14 @@ class WidgetCustom extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        IconButton(
-                          icon: Icon(
-                            Icons.favorite_border,
-                            size: 26,
-                          ),
+                        Icon(
+                          Icons.movie_outlined,
                           color: Colors.yellow,
-                          iconSize: 18,
-                          onPressed: () => null,
-                          //Navigator.pushNamed(context, '/route'),
                         ),
-                        SizedBox(width: 7),
+                        Text(
+                          Type,
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ],
                     ),
                   )
