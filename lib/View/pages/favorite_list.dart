@@ -3,31 +3,31 @@ import 'package:projetmobilelicence/Models/favorite_page_models.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class FavoriteList extends StatelessWidget{
+class FavoriteList extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            title:
-              Text('Ajout de films en favoris',style: Theme.of(context).textTheme.headlineSmall),
+            title: Text('Ajout de films en favoris',
+                style: TextStyle(color: Colors.white)),
             backgroundColor: Colors.blueGrey,
             elevation: 0,
             floating: true,
             actions: [
               IconButton(
-                  onPressed: () => Navigator.pushNamed(context, '/favoritepage'),
-                  icon: const Icon(Icons.favorite_border),
+                onPressed: () => Navigator.pushNamed(context, '/favoritepage'),
+                icon: const Icon(Icons.favorite_border),
               ),
             ],
           ),
           const SliverToBoxAdapter(child: SizedBox(height: 12)),
           SliverList(
-            delegate: SliverChildBuilderDelegate((BuildContext context,int index){
+            delegate:
+                SliverChildBuilderDelegate((BuildContext context, int index) {
               return _MyListItem(index);
-            },
-              childCount: 10),
+            }, childCount: 10),
           ),
         ],
       ),
@@ -35,20 +35,20 @@ class FavoriteList extends StatelessWidget{
   }
 }
 
-class _MyListItem extends StatelessWidget{
+class _MyListItem extends StatelessWidget {
   final int index;
 
-  const _MyListItem(this.index,{Key? key}) : super(key: key);
+  const _MyListItem(this.index, {Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     var item = context.select<FavoriteListModel, Item>(
-        (favoriteList) => favoriteList.getByPosition(index),
+      (favoriteList) => favoriteList.getByPosition(index),
     );
     var textTheme = Theme.of(context).textTheme.headline6;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: LimitedBox(
         maxHeight: 60,
         child: Row(
@@ -63,14 +63,13 @@ class _MyListItem extends StatelessWidget{
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(item.name,style: textTheme),
+                  Text(item.name, style: textTheme),
                   Text(item.subtitle,
-                  style:TextStyle(fontSize: 16,color: Colors.grey)),
+                      style: TextStyle(fontSize: 16, color: Colors.grey)),
                 ],
               ),
             ),
             const SizedBox(width: 24),
-
             _AddButton(item: item),
           ],
         ),
@@ -79,31 +78,30 @@ class _MyListItem extends StatelessWidget{
   }
 }
 
-class _AddButton extends StatelessWidget{
+class _AddButton extends StatelessWidget {
   final Item item;
 
   const _AddButton({required this.item, Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context){
-    var isInFavoritePage = context.select<FavoritePageModel,bool>(
-        (favoritepage) => favoritepage.items.contains(item),
+  Widget build(BuildContext context) {
+    var isInFavoritePage = context.select<FavoritePageModel, bool>(
+      (favoritepage) => favoritepage.items.contains(item),
     );
 
     return IconButton(
       icon: isInFavoritePage
-          ? Icon(Icons.favorite,color: Colors.red)
+          ? Icon(Icons.favorite, color: Colors.red)
           : Icon(Icons.favorite_border),
       onPressed: isInFavoritePage
-        ? () {
-        var favoritepage = context.read<FavoritePageModel>();
-        favoritepage.remove(item);
-      }
-      : () {
-        var favoritepage = context.read<FavoritePageModel>();
-        favoritepage.add(item);
-      },
+          ? () {
+              var favoritepage = context.read<FavoritePageModel>();
+              favoritepage.remove(item);
+            }
+          : () {
+              var favoritepage = context.read<FavoritePageModel>();
+              favoritepage.add(item);
+            },
     );
-
   }
 }

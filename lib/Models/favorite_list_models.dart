@@ -1,13 +1,12 @@
-class FavoriteListModel{
-
+class FavoriteListModel {
   static List<String> itemNames = [
     'The Avengers',
     'Avengers : Endgame',
     'Avengers : Infinity War',
-    'Avengers : Age of Ultron',
+    'Avengers: Ultron',
     'The Avengers',
-    "The Avengers : Earth's Mightiest Heroes",
-    'Ultimate Avengers: The Movie',
+    "The Avengers : Heroes",
+    'Ultimate Avengers',
     'Ultimate Avengers II',
     'The Avengers',
     'Avengers Assemble',
@@ -39,35 +38,34 @@ class FavoriteListModel{
     ("Asset/poster/avengersAssemble.jpg"),
   ];
 
-
   Item getById(int id) => Item(
-    id,
-    itemNames[id % itemNames.length],
-    itemSubtitles[id % itemSubtitles.length],
-    itemImages[id % itemImages.length],
-  );
+        id,
+        itemNames[id % itemNames.length],
+        itemSubtitles[id % itemSubtitles.length],
+        itemImages[id % itemImages.length],
+      );
 
-  Item getByPosition (int position){
+  Item getByPosition(int position) {
     return getById(position);
   }
 }
 
-class Item{
+class Item {
   final int id;
   final String name;
   final String subtitle;
   final String image;
 
   const Item(
-      this.id,
-      this.name,
-      this.subtitle,
-      this.image,
-      );
+    this.id,
+    this.name,
+    this.subtitle,
+    this.image,
+  );
 
   @override
   int get hashCode => id;
 
   @override
-  bool operator == (Object other) => other is Item && other.id == id;
+  bool operator ==(Object other) => other is Item && other.id == id;
 }

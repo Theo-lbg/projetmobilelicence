@@ -2,14 +2,14 @@ import 'package:projetmobilelicence/Models/favorite_page_models.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class FavoritePage extends StatelessWidget{
+class FavoritePage extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title : Text(
+        title: Text(
           'Vos Favoris',
-          style: Theme.of(context).textTheme.headlineSmall,
+          style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.blueGrey,
         elevation: 0,
@@ -27,7 +27,6 @@ class FavoritePage extends StatelessWidget{
           ],
         ),
       ),
-
       bottomNavigationBar: BottomAppBar(
           shape: const CircularNotchedRectangle(),
           child: Container(
@@ -53,21 +52,13 @@ class FavoritePage extends StatelessWidget{
                           color: Colors.white70)),
                 ],
               ))),
-
-
-
-
-
-
-
-
     );
   }
 }
 
-class _FavoritePageList extends StatelessWidget{
+class _FavoritePageList extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     var itemNameStyle = Theme.of(context).textTheme.headline6;
 
     var favoritepage = context.watch<FavoritePageModel>();
@@ -78,7 +69,7 @@ class _FavoritePageList extends StatelessWidget{
         leading: Image.asset(favoritepage.items[index].image),
         trailing: IconButton(
           icon: const Icon(Icons.delete),
-          onPressed: (){
+          onPressed: () {
             favoritepage.remove(favoritepage.items[index]);
           },
         ),
@@ -88,7 +79,7 @@ class _FavoritePageList extends StatelessWidget{
         ),
         subtitle: Text(
           favoritepage.items[index].subtitle,
-          style:TextStyle(fontSize: 16,color: Colors.grey),
+          style: TextStyle(fontSize: 16, color: Colors.grey),
         ),
       ),
     );
