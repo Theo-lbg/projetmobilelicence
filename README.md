@@ -80,6 +80,6 @@ En espérant que notre va vous plaire !
 
 
 <!-- CONTACT -->
-Kaddouri Yassine - kaddouriyassine10@hotmail.com
-Lebègue Théo	- theo.lebegue@icloud.com
+Kaddouri Yassine - kaddouriyassine10@hotmail.com - N°Étudiant 22002107
+Lebègue Théo	- theo.lebegue@icloud.com - N°Étudiant 22001641
 
