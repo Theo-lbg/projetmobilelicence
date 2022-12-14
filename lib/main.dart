@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projetmobilelicence/View/pages/Favoris.dart';
+import 'package:projetmobilelicence/Models/favorite_list_models.dart';
+import 'package:projetmobilelicence/Models/favorite_page_models.dart';
 import 'package:projetmobilelicence/View/pages/Film_view.dart';
 import 'package:projetmobilelicence/View/pages/accueil.dart';
 import 'package:projetmobilelicence/View/pages/cinema.dart';
@@ -16,23 +17,38 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'API FILMS LEBEGUE THEO',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [
+        Provider(create: (context) => FavoriteListModel()),
+        ChangeNotifierProxyProvider <FavoriteListModel, FavoritePageModel> (
+          create: (context) => FavoritePageModel(),
+          update: (context, favoriteList, favoritepage){
+            if (favoritepage == null)
+              throw ArgumentError.notNull('favoritepage');
+            favoritepage.favoritelist = favoriteList;
+            return favoritepage;
+          },
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'API FILMS LEBEGUE THEO',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const accueil(title: "Notre première application"),
+        routes: <String, WidgetBuilder>{
+          '/route1': (BuildContext context) => const accueil(
+            title: 'Notre première Application',
+          ),
+          '/route3': (BuildContext context) => const Film_view(),
+          '/route4': (BuildContext context) => const Cinema(),
+          '/favoritepage': (BuildContext context) => FavoritePage(),
+          '/favoritelist': (BuildContext context) => FavoriteList(),
+
+
+        },
       ),
-      home: const accueil(title: "Notre première application"),
-      routes: <String, WidgetBuilder>{
-        '/route1': (BuildContext context) => const accueil(
-              title: 'Notre première Application',
-            ),
-        '/route2': (BuildContext context) => const Favoris(),
-        '/route3': (BuildContext context) => const Film_view(),
-        '/route4': (BuildContext context) => const Cinema(),
-        '/' : (context) => FavoriteList(),
-        '/favoritepage' : (context) => FavoritePage(),
-      },
     );
   }
 }

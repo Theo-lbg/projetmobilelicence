@@ -11,7 +11,9 @@ class FavoriteList extends StatelessWidget{
         slivers: [
           SliverAppBar(
             title:
-              Text('Favorite',style: Theme.of(context).textTheme.headline1),
+              Text('Ajout de films en favoris',style: Theme.of(context).textTheme.headlineSmall),
+            backgroundColor: Colors.blueGrey,
+            elevation: 0,
             floating: true,
             actions: [
               IconButton(
@@ -25,7 +27,7 @@ class FavoriteList extends StatelessWidget{
             delegate: SliverChildBuilderDelegate((BuildContext context,int index){
               return _MyListItem(index);
             },
-              childCount: 15),
+              childCount: 10),
           ),
         ],
       ),

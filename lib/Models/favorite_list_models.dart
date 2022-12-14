@@ -14,16 +14,16 @@ class FavoriteListModel{
   ];
 
   static List<String> itemSubtitles = [
-    'Subtitle',
-    'Subtitle',
-    'Subtitle',
-    'Subtitle',
-    'Subtitle',
-    'Subtitle',
-    'Subtitle',
-    'Subtitle',
-    'Subtitle',
-    'Subtitle',
+    '2012',
+    '2019',
+    '2018',
+    '2015',
+    '1998',
+    '2010-2012',
+    '2006',
+    '2006',
+    '1961-1969',
+    '2012-2019',
   ];
 
   static List<String> itemImages = [

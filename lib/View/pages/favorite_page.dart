@@ -8,9 +8,11 @@ class FavoritePage extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         title : Text(
-          'Favorite Page',
-          style: Theme.of(context).textTheme.headline1,
+          'Vos Favoris',
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
+        backgroundColor: Colors.blueGrey,
+        elevation: 0,
       ),
       body: Container(
         color: Colors.white,
@@ -25,6 +27,40 @@ class FavoritePage extends StatelessWidget{
           ],
         ),
       ),
+
+      bottomNavigationBar: BottomAppBar(
+          shape: const CircularNotchedRectangle(),
+          child: Container(
+              color: Colors.blueGrey,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  IconButton(
+                      onPressed: () {
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, '/route1', (route) => false);
+                      },
+                      icon: Icon(
+                        Icons.home,
+                        color: Colors.white70,
+                      )),
+                  IconButton(
+                      onPressed: () {
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, '/route3', (route) => false);
+                      },
+                      icon: Icon(Icons.movie_creation_outlined,
+                          color: Colors.white70)),
+                ],
+              ))),
+
+
+
+
+
+
+
+
     );
   }
 }

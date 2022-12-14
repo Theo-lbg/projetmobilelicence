@@ -83,7 +83,7 @@ class _Film_viewState extends State<Film_view> {
                   //         color: Colors.white70)),
                   IconButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/route2');
+                        Navigator.pushNamed(context, '/favoritelist');
                       },
                       icon: Icon(Icons.favorite_border, color: Colors.white)),
                 ],
