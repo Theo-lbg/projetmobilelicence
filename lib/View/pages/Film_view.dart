@@ -34,8 +34,17 @@ class _Film_viewState extends State<Film_view> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text("Votre liste de films"),
-        centerTitle: true,
-        backgroundColor: Colors.blueGrey,
+        // centerTitle: true,
+        // backgroundColor: Colors.blueGrey,
+        // elevation: 0,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              Navigator.pushNamed(context, "/route5");
+            },
+          ),
+        ],
       ),
       body: _isLoading
           ? Center(

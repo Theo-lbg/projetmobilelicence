@@ -4,7 +4,6 @@ import 'package:projetmobilelicence/Models/Film.dart';
 
 class Film_api {
   static Future<List<Film>> getFilm() async {
-    // var uri = Uri.https("https://omdbapi.com/s=star&apikey=91fdcc20");
     final uri = Uri.parse('https://omdbapi.com/?apikey=91fdcc20&s=avengers');
 
     http.Response response = await http.get(uri);
@@ -17,5 +16,17 @@ class Film_api {
     }
 
     return Film.FilmFromSnapshot(_temp);
+  }
+
+  Future<Map<String, dynamic>> getFilmSearch(search) async {
+    final uri = Uri.parse('https://omdbapi.com/?apikey=91fdcc20&s=$search');
+
+    http.Response response = await http.get(uri);
+
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body);
+    } else {
+      throw Exception('Failed to load data');
+    }
   }
 }
