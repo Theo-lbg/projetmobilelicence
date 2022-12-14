@@ -34,6 +34,60 @@ class FavoriteList extends StatelessWidget{
 }
 
 class _MyListItem extends StatelessWidget{
-  
+  final int index;
+
+  const _MyListItem(this.index,{Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context){
+    var item = context.select<FavoriteListModel, Item>(
+        (favoriteList) => favoriteList.getByPosition(index),
+    );
+    var textTheme = Theme.of(context).textTheme.headline6;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
+      child: LimitedBox(
+        maxHeight: 60,
+        child: Row(
+          children: [
+            AspectRatio(
+              aspectRatio: 1,
+              child: Image.asset(item.image),
+            ),
+            const SizedBox(width: 24),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(item.name,style: textTheme),
+                  Text(item.subtitle,
+                  style:TextStyle(fontSize: 16,color: Colors.grey)),
+                ],
+              ),
+            ),
+            const SizedBox(width: 24),
+
+            _AddButton(item: item),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
+class _AddButton extends StatelessWidget{
+  final Item item;
+
+  const _AddButton({required this.item, Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context){
+    var isInFavoritePage = context.select<FavoritePageModel,bool>(
+        (favoritepage) => favoritepage.items.contains(item),
+    );
+
+    return IconButton 
+  }
+}
